@@ -52,8 +52,6 @@ console.log(JSON.parse(localStorage.getItem("prac-kanban")),"wewlke");
       id: Date.now() + Math.random() * 2,
       title,
       labels: [],
-      date: "",
-      tasks: [],
     });
     setBoards(tempBoards);
   };
