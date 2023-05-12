@@ -58,7 +58,7 @@ function CardInfo(props) {
 
 
   useEffect(() => {
-    if (props?.updateCard) {
+    if (props?.updateCard && values?.id) {
       props.updateCard(props.boardId, values.id, values);
     }
   }, [values]);
