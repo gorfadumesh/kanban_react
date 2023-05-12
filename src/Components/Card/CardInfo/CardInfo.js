@@ -22,8 +22,8 @@ function CardInfo(props) {
     "#240959",
   ];
 
-  const [selectedColor, setSelectedColor] = useState();
-  const [values, setValues] = useState({
+  const [ selectedColor, setSelectedColor ] = useState();
+  const [values, setValuesState] = useState({
     ...props.card,
   });
 
@@ -42,7 +42,7 @@ function CardInfo(props) {
     setSelectedColor("");
     setValues({
       ...values,
-      labels: [...values.labels, label],
+      labels: [ ...values.labels, label ],
     });
   };
 
@@ -56,12 +56,13 @@ function CardInfo(props) {
   };
 
 
+  const setValues = (valueObject) => { 
+if (props?.updateCard && valueObject?.id) {
+  props.updateCard(props.boardId, valueObject.id, valueObject);
+}
+    setValuesState(valueObject);
+}
 
-  useEffect(() => {
-    if (props?.updateCard && values?.id) {
-      props.updateCard(props.boardId, values.id, values);
-    }
-  }, [values]);
 
   return (
     <Modal onClose={props.onClose}>
