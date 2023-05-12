@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Board from "./Components/Board/Board";
 
 import "./App.css";
-import Editable from "./Components/Editabled/Editable";
 
 function App() {
   const columns = [
@@ -34,16 +33,6 @@ console.log(JSON.parse(localStorage.getItem("prac-kanban")),"wewlke");
     bid: "",
     cid: "",
   });
-
-  const addboardHandler = (name) => {
-    const tempBoards = [...boards];
-    tempBoards.push({
-      id: Date.now() + Math.random() * 2,
-      title: name,
-      cards: [],
-    });
-    setBoards(tempBoards);
-  };
 
   const removeBoard = (id) => {
     const index = boards.findIndex((item) => item.id === id);

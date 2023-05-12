@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import { MoreHorizontal } from "react-feather";
-
+import React from "react";
 import Card from "../Card/Card";
-import Dropdown from "../Dropdown/Dropdown";
 import Editable from "../Editabled/Editable";
 
 import "./Board.css";
